@@ -1,0 +1,23 @@
+[
+	{
+		"type": "group",
+		"title": "Settings",
+		"items": [
+			{
+				"type": "text",
+				"key": "serverURL",
+				"placeholder": "Server URL"
+			},
+			{
+				"type": "text",
+				"key": "username",
+				"placeholder": "Username"
+			},
+			{
+				"type": "text",
+				"key": "password",
+				"placeholder": "Password"
+			}
+		]
+	}
+]

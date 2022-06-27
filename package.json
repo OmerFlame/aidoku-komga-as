@@ -1,0 +1,18 @@
+{
+	"name": "komga",
+	"version": "0.1.0",
+	"ascMain": "src/index.ts",
+	"dependencies": {
+		"aidoku-as": "github:Aidoku/aidoku-as",
+		"as-base64": "^0.2.0"
+	},
+	"devDependencies": {
+		"assemblyscript": "latest"
+	},
+	"scripts": {
+		"build": "rm -rf build/package.aix build/Payload\nnpm run asbuild:optimized\nmkdir -p build/Payload\ncp build/optimized.wasm build/Payload/main.wasm\ncp res/* build/Payload/\ncd build/ ; zip -r package.aix Payload",
+		"asbuild:untouched": "asc src/index.ts --target debug",
+		"asbuild:optimized": "asc src/index.ts --target release",
+		"asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+	}
+}
