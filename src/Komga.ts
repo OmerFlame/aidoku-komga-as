@@ -210,7 +210,7 @@ export class Komga extends Source {
 
 		var chapterArray: Chapter[] = [];
 
-		for (let i = 0; i < i32(array_len(contentArray.rid)); i++) {
+		for (let i = i32(array_len(contentArray.rid)); i >= 0; i--) {
 			let chapter = contentArray.asArray().get(i).asObject();
 			let chapterMeta = chapter.get("metadata").asObject();
 
